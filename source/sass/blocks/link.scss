@@ -1,0 +1,32 @@
+.link {
+  display: inline-grid;
+  color: $bace-color;
+
+  &::after {
+    content: '';
+    width: 0;
+    height: 1.3px;
+    display: block;
+    background: $bace-color;
+    transition: $transition;
+  }
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+
+  &:active::after {
+    width: 80%;
+  }
+
+}
+
+
