@@ -1,0 +1,61 @@
+.hero {
+  padding-top: $padding-mobile;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    z-index: 1;
+    background-image: url('../img/star.svg');
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      z-index: 1;
+      background-image: url('../img/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    font-size: 56px;
+    @include title;
+    color: $accent-color;
+
+    &--second {
+      color: $white;
+      margin-left: 80px;
+    }
+
+    @include laptop {
+      font-size: 128px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-top: 16px;
+    margin-left: 80px;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+
+    @include laptop {
+      font-size: 26px;
+    }
+  }
+}

@@ -1,10 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
-  color: $bace-color;
+  color: $gray;
   background-color: $bg-color;
-  font-family: 'Rawline', 'Arial', sans-serif;
+  font-family: 'gteestipro', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 145%;
+  line-height: 150%;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -12,22 +16,14 @@ body {
   min-height: 100%;
 }
 
-.title {
-  font-size: 48px;
-  font-weight: 600;
-}
-
-main {
-  margin-top: calc(60px + 56px);
-
-  @include laptop {
-    margin-top: calc(90px + 72px);
-  }
-}
-
 a {
-  color: $bace-color;
+  color: $accent-color;
   text-decoration: none;
+  transition: $transition;
+}
+
+a:hover {
+  color: $accent-color;
 }
 
 img {
@@ -35,23 +31,6 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-}
-
-h1.headline + p, h2.headline + p {
-  margin-top: 24px;
-
-  @include laptop {
-    margin-top: 36px;
-  }
-}
-
-p:not(:last-child) {
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-p {
-  margin: 0;
 }
 
 address {
@@ -64,12 +43,23 @@ button {
   border: 0;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 input,
 textarea,
 button {
-  font-family: 'Noah', 'Arial', sans-serif;
+  font-family: 'gteestipro', 'Arial', sans-serif;
+}
+
+textarea {
+  height: 100%;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 .visually-hidden {
@@ -87,4 +77,12 @@ button {
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+
+.body-lock {
+  overflow: hidden;
+}
+
+.preload {
+  height: 1000px;
 }

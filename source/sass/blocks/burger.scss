@@ -1,0 +1,63 @@
+.burger {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	z-index: 7;
+	overflow: hidden;
+  margin-right: 24px;
+
+  @include tabold {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background-color: $white;
+    position: absolute;
+    transition: all 0.5s;
+  }
+
+  &::before {
+    bottom: 14px;
+  }
+
+  &::after {
+    bottom: 6px;
+  }
+
+  &--open {
+    &::before {
+      bottom: 12px;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      bottom: 12px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@include mobile-tablet-only {
+  .burger-panel {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    padding: 20px 50px;
+    background: $black;
+    transform: translateX(-100%);
+    transition: $transition;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    z-index: 2;
+  }
+
+  .burger-panel.active {
+    transform: translateX(0);
+    z-index: 6;
+  }
+}

@@ -1,0 +1,164 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  transform: scale(1.1);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+  pointer-events: none;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__wrapper {
+    transform: translateZ(0);
+    background-color: rgba(#2b2b2b, 0.8);
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+
+    @include laptop {
+      padding: 0;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+  }
+
+  &__content {
+    position: relative;
+    max-width: 600px;
+    padding: 24px;
+    background-color: $white;
+    box-sizing: border-box;
+
+    @include laptop {
+      min-width: 480px;
+      padding: 40px;
+    }
+  }
+
+  &__content--wide {
+    @include laptop {
+      max-width: 752px;
+    }
+  }
+
+  &__content--video {
+    background-color: $black;
+    width: 100%;
+    padding: 0;
+
+    @include laptop {
+      max-width: 800px;
+    }
+  }
+
+  &__content--video iframe {
+    height: 300px;
+
+    @include laptop {
+      width: 100%;
+      height: 450px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: -8px;
+    top: -40px;
+    color: $gray;
+
+    padding: 0;
+
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &--preload {
+    transition: none;
+  }
+
+  &.is-active {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+    pointer-events: auto;
+  }
+
+  iframe {
+    max-width: 100%;
+    border: none;
+  }
+
+  &__title {
+    font-size: 30px;
+    @include title;
+
+    @include laptop {
+      font-size: 36px;
+    }
+  }
+
+  &__form-text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  &__form {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__form-button {
+    max-width: 100%;
+    margin-top: 12px;
+  }
+
+  &__form-input {
+    max-width: 100%;
+  }
+
+  &__form-input--select {
+    font-size: 16px;
+    font-family: "Montserrat","Arial",sans-serif;
+  }
+}

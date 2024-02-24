@@ -1,14 +1,22 @@
-$white: #ffffff;
-$gray: #f3f2f1;
-$darkgray: #ced2cc;
-$bace-color: #252525;
-$bg-color: #fdfdfd;
-$accent-color: #c6c2b7;
+$white: #fbfbff;
+$gray: #e8e8e8;
+$black: #242429;
+$yellow: #d2b148;
+$bg-color: #26282d;
+$accent-color: #aad28c;
+
 $hover-color: rgb(37, 37, 37, 90%);
 $active-color: rgb(37, 37, 37, 75%);
 
-$padding-white: 56px;
-$padding-mobile: 72px;
-$padding-pc: 144px;
-
+$padding-mobile: 36px;
+$padding-pc: 96px;
 $transition: all 0.3s;
+
+@mixin title {
+  color: $white;
+  text-transform: uppercase;
+  font-family: "steelfish", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 105%;
+  margin: 0;
+}

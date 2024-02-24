@@ -1,32 +1,14 @@
 .link {
-  display: inline-grid;
-  color: $bace-color;
-
-  &::after {
-    content: '';
-    width: 0;
-    height: 1.3px;
-    display: block;
-    background: $bace-color;
-    transition: $transition;
-  }
+  color: $accent-color;
+  transition: $transition;
 
   &:hover {
-    color: $hover-color;
-  }
-
-  &:hover::after {
-    width: 100%;
+    color: $yellow;
   }
 
   &:active {
-    color: $active-color;
+    color: $white;
   }
-
-  &:active::after {
-    width: 80%;
-  }
-
 }
 
 

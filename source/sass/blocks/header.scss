@@ -1,0 +1,39 @@
+.header {
+  background-color: $black;
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  &__container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+
+    @include laptop {
+      height: 80px;
+    }
+  }
+
+  &__button {
+    margin-left: auto;
+  }
+
+  &__menu {
+    @include tabold {
+      display: flex;
+      gap: 24px;
+      margin-left: 6%;
+    }
+
+    @include laptop {
+      gap: 32px;
+    }
+  }
+
+  &__link {
+    color: $white;
+  }
+}

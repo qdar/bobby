@@ -1,31 +1,31 @@
 @font-face {
-  font-family: "Rawline";
+  font-family: "gteestipro";
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/rawline-300.woff2") format("woff2");
+  src: url("../fonts/gteestiprodisplay_thin.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Rawline";
+  font-family: "gteestipro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/gteestiprodisplay_regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gteestipro";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/rawline-500.woff2") format("woff2");
+  src: url("../fonts/gteestiprodisplay_medium.woff2") format("woff2");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Rawline";
+  font-family: "steelfish";
   font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/rawline-600.woff2") format("woff2");
+  font-weight: 400;
+  src: url("../fonts/steelfish.woff2") format("woff2");
   font-display: swap;
 }
-
-// @font-face {
-//   font-family: "Rawline";
-//   font-style: normal;
-//   font-weight: 800;
-//   src: url("../fonts/rawline-800.woff2") format("woff2");
-//   font-display: swap;
-// }
