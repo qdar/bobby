@@ -1,0 +1,37 @@
+.bullets {
+  padding-top: 48px;
+
+  @include tabold {
+    padding-top: 72px;
+  }
+
+  &__product {
+    border-radius: $radius;
+    overflow: hidden;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__list {
+    background-color: $black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 36px;
+
+    @include tabold {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 1.2;
+
+    @include tabold {
+      text-align: center;
+    }
+  }
+}
