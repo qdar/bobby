@@ -1,0 +1,107 @@
+.protect {
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+
+  @include tabold {
+    padding-top: $padding-pc;
+    padding-bottom: $padding-pc;
+  }
+
+  &__item {
+    font-weight: 300;
+
+    & p {
+      margin-bottom: 0;
+      margin-top: 12px;
+    }
+  }
+
+  &__item + &__item {
+    margin-top: 36px;
+  }
+
+  &__subtitle {
+    color: $accent-color;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__header {
+    position: relative;
+
+    @include tabold {
+      padding-bottom: 96px;
+    }
+
+    &::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 100px;
+      right: 0;
+      z-index: 1;
+      background-image: url('../img/star.svg');
+      background-repeat: no-repeat;
+
+      @include tabold {
+        right: auto;
+        left: 40px;
+        top: 30px;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: 48px;
+    margin-bottom: 48px;
+
+    @include tabold {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image--header {
+
+    @include tabold {
+      position: absolute;
+      right: 90px;
+      bottom: 20px;
+      width: 270px;
+    }
+
+    @include laptop {
+      width: 400px;
+      right: 0;
+      bottom: -70px;
+    }
+  }
+
+  &__first-line {
+    @include tabold {
+      text-align: center;
+    }
+  }
+
+  &__second-line {
+    @include tabold {
+      margin-left: 10%;
+    }
+  }
+
+  &__container {
+    @include tabold {
+      display: grid;
+      grid-template-columns: 2fr 4fr 3fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @include laptop {
+      gap: 56px;
+    }
+  }
+
+}

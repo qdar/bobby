@@ -1,0 +1,17 @@
+.title {
+  font-size: 56px;
+  @include title;
+
+  @include tabold {
+    font-size: 90px;
+    display: grid;
+  }
+
+  @include laptop {
+    font-size: 128px;
+  }
+
+  &__accent {
+    color: $accent-color;
+  }
+}

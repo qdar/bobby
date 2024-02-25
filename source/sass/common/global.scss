@@ -83,6 +83,7 @@ fieldset {
   overflow: hidden;
 }
 
-.preload {
-  height: 1000px;
+.round-image {
+  overflow: hidden;
+  border-radius: $radius;
 }
