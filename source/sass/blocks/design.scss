@@ -1,0 +1,126 @@
+.design {
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+
+  @include tabold {
+    padding-top: $padding-pc;
+    padding-bottom: $padding-pc;
+  }
+
+  &__header {
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: -40px;
+      left: 0;
+      z-index: 1;
+      background-image: url('../img/star.svg');
+      background-repeat: no-repeat;
+
+      @include tabold {
+        top: 25px;
+        right: 40px;
+      }
+
+      @include laptop {
+        top: 50px;
+      }
+    }
+
+    &::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 120%;
+      right: 0;
+      z-index: 1;
+      background-image: url('../img/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include tabold {
+        top: -10%;
+      }
+
+      @include laptop {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__first-line {
+    @include tabold {
+      text-align: center;
+    }
+  }
+
+  &__second-line {
+    @include tabold {
+      margin-left: 8%;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 36px;
+    margin-top: 48px;
+
+    @include tabold {
+      margin-top: 96px;
+    }
+
+    @include laptop {
+      margin-top: 146px;
+      gap: 0 56px;
+    }
+  }
+
+  &__item {
+    font-weight: 300;
+
+    & p {
+      margin-bottom: 0;
+      margin-top: 12px;
+    }
+  }
+
+  &__subtitle {
+    color: $accent-color;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__container {
+    margin-top: 72px;
+
+    @include tabold {
+      margin-top: -60px;
+      display: grid;
+      grid-template-columns: 2fr 3fr 4fr;
+      gap: 32px;
+    }
+
+    @include laptop {
+      gap: 56px;
+    }
+  }
+
+  &__list--first {
+    @include tabold {
+      order: -1;
+    }
+  }
+
+  &__list--second {
+    @include tabold {
+      order: -2;
+    }
+  }
+}
