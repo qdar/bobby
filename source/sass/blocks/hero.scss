@@ -54,25 +54,14 @@
   }
 
   &__title {
-    font-size: 56px;
-    @include title;
     color: $accent-color;
+  }
 
-    &--second {
-      color: $white;
-      margin-left: 80px;
-
-      @include tabold {
-        text-align: right;
-      }
-    }
+  &__second-title {
+    margin-left: 80px;
 
     @include tabold {
-      font-size: 90px;
-    }
-
-    @include laptop {
-      font-size: 128px;
+      text-align: right;
     }
   }
 
