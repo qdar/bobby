@@ -1,0 +1,55 @@
+.footer {
+  background-color: $black;
+  padding-top: $padding-mobile;
+  padding-bottom: $padding-mobile;
+
+  @include tabold {
+    padding-top: $padding-pc;
+    padding-bottom: $padding-pc;
+  }
+
+  &__container {
+    @include tabold {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 56px;
+    }
+  }
+
+  &__phone {
+    color: $white;
+    text-transform: uppercase;
+    font-family: "steelfish", "Arial", sans-serif;
+    font-size: 56px;
+    margin: 24px 0;
+    line-height: 1.4;
+
+    @include laptop {
+      font-size: 64px;
+      margin: 0;
+    }
+  }
+
+  &__contact {
+    color: $accent-color;
+  }
+
+  &__list &__item:first-child {
+    color: $accent-color;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  &__list + &__list {
+    margin-top: 36px;
+
+    @include tabold {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    color: $white;
+  }
+}

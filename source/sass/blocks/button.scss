@@ -1,0 +1,13 @@
+.button {
+  background-color: $accent-color;
+  font-size: 18px;
+  border-radius: $radius;
+  height: 50px;
+  min-width: 200px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: $yellow;
+  }
+}
