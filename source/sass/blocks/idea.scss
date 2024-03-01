@@ -1,4 +1,4 @@
-.design {
+.idea {
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
 
@@ -7,7 +7,7 @@
     padding-bottom: $padding-pc;
   }
 
-  &__header {
+  &__title {
     position: relative;
 
     &::before {
@@ -15,19 +15,20 @@
       width: 40px;
       height: 40px;
       position: absolute;
-      top: -40px;
-      left: 0;
-      z-index: 1;
+      top: 15px;
+      right: 0;
+      z-index: -1;
       background-image: url('../img/star.svg');
       background-repeat: no-repeat;
 
       @include tabold {
-        top: 25px;
-        right: 40px;
+        top: 40px;
+        right: auto;
+        left: 20px;
       }
 
       @include laptop {
-        top: 50px;
+        top: 60px;
       }
     }
 
@@ -36,15 +37,17 @@
       width: 60px;
       height: 60px;
       position: absolute;
-      top: 120%;
-      right: 0;
-      z-index: 1;
+      top: 90%;
+      left: 0;
+      z-index: -1;
       background-image: url('../img/arrow.svg');
       background-repeat: no-repeat;
       background-size: contain;
 
       @include tabold {
         top: -10%;
+        right: 10%;
+        left: auto;
       }
 
       @include laptop {
@@ -56,13 +59,13 @@
 
   &__first-line {
     @include tabold {
-      text-align: center;
+      margin-left: 8%;
     }
   }
 
   &__second-line {
     @include tabold {
-      margin-left: 8%;
+      margin-left: 25%;
     }
   }
 
@@ -77,11 +80,12 @@
 
     @include laptop {
       margin-top: 146px;
-      gap: 0 56px;
     }
   }
 
   &__item {
+    font-weight: 300;
+
     & p {
       margin-bottom: 0;
       margin-top: 12px;
@@ -96,29 +100,29 @@
   }
 
   &__container {
-    margin-top: 72px;
+    display: grid;
+    gap: 32px;
 
     @include tabold {
-      margin-top: -60px;
-      display: grid;
-      grid-template-columns: 2fr 3fr 4fr;
-      gap: 32px;
+      margin-top: -50px;
+      grid-template-columns: 2fr 4fr 3fr;
     }
 
     @include laptop {
+      margin-top: -100px;
       gap: 56px;
     }
   }
 
-  &__list--first {
+  &__aside {
     @include tabold {
-      order: -1;
+      height: 100%;
     }
   }
 
-  &__list--second {
+  &__aside--first {
     @include tabold {
-      order: -2;
+      order: -1;
     }
   }
 }
