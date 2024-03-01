@@ -35,4 +35,17 @@
     }
   }
 
+  &__swiper {
+    margin-left: 20px;
+    padding-right: 60px;
+
+    @include laptop {
+      margin: 0 auto;
+      max-width: 1310px;
+      overflow: initial;
+      padding-right: 0;
+    }
+
+  }
+
 }

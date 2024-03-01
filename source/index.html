@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puregram</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="img/icon.svg" type="image/svg+xml">
@@ -32,7 +33,7 @@
           <a class="header__link js-burger" href="#">Стоимость</a>
         </li>
       </ul>
-      <button type="button" class="header__button link">Оставить заявку</button>
+      <button type="button" class="header__button link" data-open-modal="order">Оставить заявку</button>
     </div>
   </header>
   <main>
@@ -221,7 +222,7 @@
                 <li class="price__item">Минималистичный дизайн</li>
               </ul>
               <p class="price__summ price__summ--mobile">11 199 ₽</p>
-              <button class="price__button button">Заказать</button>
+              <button class="price__button button" data-open-modal="order">Заказать</button>
             </div>
             <aside>
               <p class="price__summ price__summ--desktop">11 199 ₽</p>
@@ -284,6 +285,22 @@
       <div class="container review__container">
         <h2 class="review__title title"><span class="title__accent">Мнения</span> покупателей</h2>
       </div>
+      <div class="swiper review__swiper">
+        <ul class="clear-list swiper-wrapper slider">
+          <li class="swiper-slide slider__item">
+            <p>Перешел на pro модель с базовой версии и не пожалел: вместительность увеличена почти в полтора раза, вариант в сером цвете стал более темным, из-за этого менее маркий. Вместо раздутых карманов сделали сеточки и резинки, что удобно и экономит место. Все нюансы описывать долго, проще посмотреть обзор</p>
+          </li>
+          <li class="swiper-slide slider__item">
+            <p>Рюкзаком пользуюсь больше двух недель, пользуюсь всеми его фишками. Особенно зашло хранение проездного в лямке, а также отдельный карман для ключей.Секции внутри рюкзака можно переставлять, что не один раз меня спасло) В ооооообщем - рекомендую</p>
+          </li>
+          <li class="swiper-slide slider__item">
+            <p>При разработке рюкзака Bobby XD Design использовался принцип многослойности - защита от надрезов. Рюкзак отлично держит форму в отличие от подделок-аналогов. Мне доводилось ходить с рюкзаком в непогоду, содержимое не вымокло благодаря влагонепроницаемой ткани, но сам рюкзак просушила после такой "замечательной" прогулки.</p>
+          </li>
+        </ul>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </section>
     <section class="faq">
       <div class="container faq__container">
@@ -344,7 +361,31 @@
     </div>
   </footer>
 
+  <section class="modal" data-modal="order">
+    <div class="modal__wrapper">
+      <div class="modal__overlay" data-close-modal="data-close-modal"></div>
+      <div class="modal__content">
+        <section>
+          <h2 class="modal__title">Заказать рюкзак Bobby Pro</h2>
+          <p class="modal__form-text">Наш эксперт в течении 30 минут соберет ваш заказ, и в ближайшие 24 часа вы получите рюкзак.</p>
+          <form action="#" method="post" class="modal__form">
+            <input class="modal__form-input input" type="text" name="email" placeholder="E-mail" required="">
+            <input class="modal__form-input input" type="text" name="phone" placeholder="Телефон" required="">
+            <input class="modal__form-input input" type="text" name="clientname" placeholder="Имя" required="">
+            <button class="modal__form-button button" type="submit">Сделать заказ</button>
+          </form>
+        </section>
+        <button class="modal__close-btn btn" type="button" aria-label="Закрыть попап" data-close-modal="data-close-modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M24.056 23.5004L23.5004 24.056C23.1935 24.3628 22.696 24.3628 22.3892 24.056L16 17.6668L9.61075 24.056C9.30391 24.3628 8.80642 24.3628 8.49958 24.056L7.944 23.5004C7.63716 23.1936 7.63716 22.6961 7.944 22.3892L14.3332 16L7.944 9.61081C7.63716 9.30397 7.63716 8.80648 7.944 8.49964L8.49958 7.94406C8.80642 7.63721 9.30391 7.63721 9.61075 7.94406L16 14.3333L22.3892 7.94404C22.6961 7.6372 23.1935 7.6372 23.5004 7.94404L24.056 8.49963C24.3628 8.80647 24.3628 9.30395 24.056 9.61079L17.6667 16L24.056 22.3892C24.3628 22.6961 24.3628 23.1936 24.056 23.5004Z" fill="#fff"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
 
+  <script type="module" src="js/module-modal.js"></script>
+  <script src="js/swiper-bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>

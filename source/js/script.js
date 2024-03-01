@@ -38,3 +38,19 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+const swiper = new Swiper('.review__swiper', {
+  slidesPerView: 1,
+  spaceBetween: 16,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 56,
+    },
+  },
+});

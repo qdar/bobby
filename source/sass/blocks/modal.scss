@@ -59,28 +59,12 @@
     position: relative;
     max-width: 600px;
     padding: 24px;
-    background-color: $white;
+    background-color: $black;
     box-sizing: border-box;
 
     @include laptop {
-      min-width: 480px;
-      padding: 40px;
-    }
-  }
-
-  &__content--wide {
-    @include laptop {
-      max-width: 752px;
-    }
-  }
-
-  &__content--video {
-    background-color: $black;
-    width: 100%;
-    padding: 0;
-
-    @include laptop {
-      max-width: 800px;
+      min-width: 460px;
+      padding: 80px;
     }
   }
 
