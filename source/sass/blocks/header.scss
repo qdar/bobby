@@ -1,5 +1,6 @@
 .header {
   background-color: $black;
+  animation: 0.7s ease-out 0s header;
 
   &--sticky {
     position: sticky;
@@ -35,5 +36,14 @@
 
   &__link {
     color: $white;
+  }
+}
+
+@keyframes header {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }

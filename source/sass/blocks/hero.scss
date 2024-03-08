@@ -24,6 +24,15 @@
       z-index: 1;
       background-image: url('../img/star.svg');
       background-repeat: no-repeat;
+      opacity: 0.1;
+      transition: all 0.9s;
+      transform: translateY(20px);
+    }
+
+    &._active::before {
+      opacity: 1;
+      transition-delay: 200ms;
+      transform: translateY(0);
     }
   }
 
@@ -41,6 +50,9 @@
       background-image: url('../img/arrow.svg');
       background-repeat: no-repeat;
       background-size: contain;
+      opacity: 0;
+      transition: all 0.9s;
+      transform: translateY(30px);
 
       @include tabold {
         top: 62%;
@@ -51,10 +63,12 @@
         height: 80px;
       }
     }
-  }
 
-  &__title {
-    color: $accent-color;
+    &._active::after {
+      opacity: 1;
+      transition-delay: 1200ms;
+      transform: translateY(0);
+    }
   }
 
   &__second-title {
@@ -66,6 +80,7 @@
   }
 
   &__subtitle {
+    color: $white;
     margin: 0;
     margin-top: 16px;
     margin-left: 80px;
@@ -73,7 +88,15 @@
     font-style: italic;
     font-size: 20px;
     line-height: 1.4;
-    color: $white;
+    transition: all 0.9s;
+    transform: translateY(90px);
+    opacity: 0;
+
+    &._active {
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: 0.6s;
+    }
 
     @include tabold {
       position: absolute;
@@ -88,6 +111,15 @@
 
   &__image {
     display: none;
+    transition: all 0.9s;
+    transform: translateY(200px);
+    opacity: 0;
+
+    &._active {
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: 0.2s;
+    }
 
     @include tabold {
       display: block;

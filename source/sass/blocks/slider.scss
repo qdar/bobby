@@ -1,11 +1,25 @@
 .slider {
 
   &__item {
+    font-size: 15px;
+    line-height: 140%;
     background-color: $black;
     border-radius: $radius;
-    padding: 24px;
+    padding: 30px;
     box-sizing: border-box;
-    font-size: 16px;
+    display: grid;
+    gap: 16px;
+
+    opacity: 0;
+    transition: all 1s;
+
+    &._active {
+      opacity: 1;
+    }
+
+    @include mobile-only {
+      height: auto;
+    }
 
     @include tabold {
       padding: 42px;
@@ -14,7 +28,57 @@
 
     @include laptop {
       padding: 56px;
-      max-width: 540px!important;
+      max-width: 540px;
+    }
+
+    & p {
+      margin: 0;
     }
   }
+
+  &__next,
+  &__prev {
+    border-radius: 50%;
+    border: 1px solid $white;
+    width: 48px;
+    height: 48px;
+    transform: translate(10px,0);
+    transition: all .3s;
+    top: auto;
+    bottom: 0;
+  }
+
+  &__next {
+    right: -116px;
+
+    &::after {
+      content: "";
+      background-image: url(../img/slider-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 24px;
+      width: 24px;
+      height: 14px;
+    }
+  }
+
+  &__prev {
+    left: 0;
+
+    &::after {
+      content: "";
+      background-image: url(../img/slider-arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 24px;
+      width: 24px;
+      height: 14px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 76px);
+  }
+
 }

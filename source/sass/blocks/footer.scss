@@ -2,10 +2,19 @@
   background-color: $black;
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
+  opacity: 0;
+  transition: all 1s;
+  transform: translateY(60px);
 
   @include tabold {
     padding-top: $padding-pc;
     padding-bottom: $padding-pc;
+  }
+
+  &._active {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
   }
 
   &__container {

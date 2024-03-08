@@ -1,10 +1,8 @@
 .design {
   padding-top: $padding-mobile;
-  padding-bottom: $padding-mobile;
 
   @include tabold {
     padding-top: $padding-pc;
-    padding-bottom: $padding-pc;
   }
 
   &__header {
@@ -21,6 +19,10 @@
       background-image: url('../img/star.svg');
       background-repeat: no-repeat;
 
+      opacity: 0.1;
+      transition: all 0.9s;
+      transform: translateY(20px);
+
       @include tabold {
         top: 25px;
         right: 40px;
@@ -29,6 +31,12 @@
       @include laptop {
         top: 50px;
       }
+    }
+
+    &._active::before {
+      opacity: 1;
+      transition-delay: 200ms;
+      transform: translateY(0);
     }
 
     &::after {
@@ -43,6 +51,10 @@
       background-repeat: no-repeat;
       background-size: contain;
 
+      opacity: 0;
+      transition: all 0.9s;
+      transform: translateY(30px);
+
       @include tabold {
         top: -10%;
       }
@@ -52,6 +64,13 @@
         height: 80px;
       }
     }
+
+    &._active::after {
+      opacity: 1;
+      transition-delay: 1200ms;
+      transform: translateY(0);
+    }
+
   }
 
   &__first-line {
@@ -82,10 +101,35 @@
   }
 
   &__item {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(10px);
+
     & p {
       margin-bottom: 0;
       margin-top: 12px;
     }
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__item:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+
+  &__item:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+
+  &__item:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  &__item:nth-child(4) {
+    transition-delay: 0.8s;
   }
 
   &__subtitle {
@@ -119,6 +163,18 @@
   &__list--second {
     @include tabold {
       order: -2;
+    }
+  }
+
+  &__image--small {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(-140px);
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
     }
   }
 }

@@ -1,10 +1,8 @@
 .idea {
   padding-top: $padding-mobile;
-  padding-bottom: $padding-mobile;
 
   @include tabold {
     padding-top: $padding-pc;
-    padding-bottom: $padding-pc;
   }
 
   &__title {
@@ -21,6 +19,10 @@
       background-image: url('../img/star.svg');
       background-repeat: no-repeat;
 
+      opacity: 0;
+      transition: all 0.9s;
+      transform: translateY(50px);
+
       @include tabold {
         top: 40px;
         right: auto;
@@ -30,6 +32,12 @@
       @include laptop {
         top: 60px;
       }
+    }
+
+    &._active::before {
+      opacity: 1;
+      transition-delay: 500ms;
+      transform: translateY(0);
     }
 
     &::after {
@@ -44,6 +52,10 @@
       background-repeat: no-repeat;
       background-size: contain;
 
+      opacity: 0;
+      transition: all 0.9s;
+      transform: translateY(20px);
+
       @include tabold {
         top: -10%;
         right: 10%;
@@ -54,6 +66,12 @@
         width: 80px;
         height: 80px;
       }
+    }
+
+    &._active::after {
+      opacity: 1;
+      transition-delay: 1200ms;
+      transform: translateY(0);
     }
   }
 
@@ -84,12 +102,27 @@
   }
 
   &__item {
-    font-weight: 300;
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(10px);
 
     & p {
       margin-bottom: 0;
       margin-top: 12px;
     }
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__item:nth-child(1) {
+    transition-delay: 0.3s;
+  }
+
+  &__item:nth-child(2) {
+    transition-delay: 0.6s;
   }
 
   &__subtitle {
@@ -123,6 +156,18 @@
   &__aside--first {
     @include tabold {
       order: -1;
+    }
+  }
+
+  &__aside--second {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(40px);
+    transition-delay: 0.8s;
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

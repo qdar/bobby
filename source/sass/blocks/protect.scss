@@ -1,6 +1,7 @@
 .protect {
   padding-top: $padding-mobile;
   padding-bottom: $padding-mobile;
+  overflow: hidden;
 
   @include tabold {
     padding-top: $padding-pc;
@@ -9,11 +10,39 @@
 
   &__item {
     font-weight: 300;
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(10px);
 
     & p {
       margin-bottom: 0;
       margin-top: 12px;
     }
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__item:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+
+  &__item:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+
+  &__item:nth-child(3) {
+    transition-delay: 0.6s;
+  }
+
+  &__item:nth-child(4) {
+    transition-delay: 0.8s;
+  }
+
+  &__item:nth-child(4) {
+    transition-delay: 1s;
   }
 
   &__item + &__item {
@@ -64,6 +93,10 @@
   }
 
   &__image--header {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateX(140px);
+
     @include tabold {
       position: absolute;
       right: 90px;
@@ -75,6 +108,12 @@
       width: 400px;
       right: 0;
       bottom: -70px;
+    }
+
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.3s;
     }
   }
 

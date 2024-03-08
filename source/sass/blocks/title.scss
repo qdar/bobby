@@ -1,6 +1,15 @@
 .title {
   font-size: 56px;
   @include title;
+  transform: translateY(80px);
+  transition: all ease-in 1s;
+  transition-delay: 300ms;
+  opacity: 0;
+
+  &._active {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   @include tabold {
     font-size: 90px;
